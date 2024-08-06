@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="clock"></div>
+
+    <script>
+      let eventSource = new EventSource("/clock");
+      let clock = document.querySelector("#clock");
+      eventSource.onmessage = function (event) {
+        let message = event.data;
+        clock.innerHTML = message;
+      };
+      eventSource.onopen = function (event) {
+        console.log("open");
+      };
+      eventSource.onerror = function (event) {
+        console.log("error");
+      };
+    </script>
+  </body>
+</html>
