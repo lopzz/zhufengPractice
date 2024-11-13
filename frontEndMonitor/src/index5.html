@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>monitor</title>
+  </head>
+
+  <body style="background-color: green">
+    <div id="container">
+      <div
+        class="content"
+        style="width: 600px; height: 600px; word-wrap: break-word"
+      >
+        <input />
+      </div>
+    </div>
+
+    <script>
+      let content = document.getElementsByClassName("content")[0];
+      //content.innerHTML = '@'.repeat(10000);
+      setTimeout(() => {
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "我是最有重要的内容";
+        h1.setAttribute("elementtiming", "meaningful");
+        content.appendChild(h1);
+      }, 2000);
+    </script>
+  </body>
+</html>
